@@ -6,7 +6,12 @@ declare module 'vue' {
   export interface GlobalComponents {
     Counter: typeof import('./components/Counter.vue')['default']
     Footer: typeof import('./components/Footer.vue')['default']
+    NA: typeof import('naive-ui')['NA']
     NButton: typeof import('naive-ui')['NButton']
+    NCard: typeof import('naive-ui')['NCard']
+    NColorPicker: typeof import('naive-ui')['NColorPicker']
+    NSpace: typeof import('naive-ui')['NSpace']
+    NTag: typeof import('naive-ui')['NTag']
     README: typeof import('./components/README.md')['default']
   }
 }

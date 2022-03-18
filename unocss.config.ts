@@ -9,10 +9,36 @@ import {
   transformerVariantGroup,
 } from 'unocss'
 
+import themeOverrides from './naive-ui-theme-overrides.json'
+
 export default defineConfig({
   shortcuts: [
-    ['btn', 'px-4 py-1 rounded inline-block bg-teal-600 text-white cursor-pointer hover:bg-teal-700 disabled:cursor-default disabled:bg-gray-600 disabled:opacity-50'],
-    ['icon-btn', 'text-[0.9em] inline-block cursor-pointer select-none opacity-75 transition duration-200 ease-in-out hover:opacity-100 hover:text-teal-600'],
+    ['column-layout', 'flex flex-col border border-dashed p-3 my-3'],
+    ['flex-HC', 'flex justify-center'],
+    ['flex-VC', 'flex flex-col justify-center'],
+    ['flex-C', 'flex justify-center items-center'],
+  ],
+  theme: {
+    colors: {
+      primary: {
+        DEFAULT: themeOverrides.common.primaryColor,
+        lighten: themeOverrides.common.primaryColorHover,
+        darken: themeOverrides.common.primaryColorPressed,
+      },
+    },
+  },
+  rules: [
+    [
+      /^grid-layout-(\d+)(\/(\d+(.*)))?$/,
+      ([, row, , gap, gapUnit]) => {
+        return {
+          'display': 'grid',
+          'grid-gap': `${gap ?? '36'}${gapUnit ? '' : 'px'}`,
+          'grid-template-columns': `repeat(${row}, minmax(0, 1fr))`,
+        }
+      },
+      { layer: 'components' },
+    ],
   ],
   presets: [
     presetUno(),
