@@ -20,17 +20,27 @@ const markdownWrapperClasses = 'prose prose-sm m-auto text-left'
 export default defineConfig({
   resolve: {
     alias: {
+      '#/': `${path.resolve(__dirname, '')}/`,
       '~/': `${path.resolve(__dirname, 'src')}/`,
     },
   },
   plugins: [
     Vue({
       include: [/\.vue$/, /\.md$/],
+      reactivityTransform: 'src/pages/script_setup/**/*.vue',
+      template: {
+        compilerOptions: {
+          isCustomElement: tag => tag.startsWith('my-'),
+        },
+      },
     }),
 
     // https://github.com/hannoeru/vite-plugin-pages
     Pages({
       extensions: ['vue', 'md'],
+      exclude: [
+        '**/components/*.vue',
+      ],
     }),
 
     // https://github.com/JohnCampionJr/vite-plugin-vue-layouts
@@ -44,6 +54,10 @@ export default defineConfig({
         'vue-i18n',
         '@vueuse/head',
         '@vueuse/core',
+        {
+          'vue': ['isProxy', 'isReactive'],
+          'vue/macros': ['$$', '$ref', '$computed', '$shallowRef'],
+        },
       ],
       dts: 'src/auto-imports.d.ts',
     }),

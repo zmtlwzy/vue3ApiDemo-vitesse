@@ -4,15 +4,14 @@ const { t } = useI18n()
 </script>
 
 <template>
-  <main p="x4 y10" text="center teal-700 dark:gray-200">
-    <div text-4xl>
-      <div i-carbon-warning inline-block />
-    </div>
-    <router-view />
-    <div>
-      <button btn text-sm m="3 t8" @click="router.back()">
-        {{ t('button.back') }}
-      </button>
-    </div>
+  <main flex-C h-screen>
+    <n-result status="404" :title="t('not-found')">
+      <router-view />
+      <div flex-C>
+        <n-button ghost @click="router.back()">
+          {{ t('button.back') }}
+        </n-button>
+      </div>
+    </n-result>
   </main>
 </template>

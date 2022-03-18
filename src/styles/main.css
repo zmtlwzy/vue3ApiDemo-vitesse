@@ -8,6 +8,10 @@ body,
   padding: 0;
 }
 
+html {
+  --app-header-height: 60px;
+}
+
 html.dark {
   background: #121212;
 }

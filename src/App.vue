@@ -1,15 +1,23 @@
 <script setup lang="ts">
-// https://github.com/vueuse/head
-// you can use this to manipulate the document head in any components,
-// they will be rendered correctly in the html results with vite-ssg
+import { getNaiveThemeProps, lang_storage } from '~/composables'
+
+const { locale } = useI18n()
 useHead({
-  title: 'Vitesse',
+  title: 'Vue3-api-demo',
   meta: [
-    { name: 'description', content: 'Opinionated Vite Starter Template' },
+    { name: 'description', content: 'Study vue3 api' },
   ],
+})
+
+watchEffect(() => {
+  locale.value = lang_storage.value
 })
 </script>
 
 <template>
-  <router-view />
+  <n-config-provider v-bind="getNaiveThemeProps">
+    <n-message-provider>
+      <router-view />
+    </n-message-provider>
+  </n-config-provider>
 </template>
