@@ -12,6 +12,7 @@ import {
 import themeOverrides from './naive-ui-theme-overrides.json'
 
 export default defineConfig({
+  safelist: ['gap-2'],
   shortcuts: [
     ['column-layout', 'flex flex-col border border-dashed p-3 my-3'],
     ['flex-HC', 'flex justify-center'],

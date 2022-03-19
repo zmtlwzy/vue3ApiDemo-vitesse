@@ -12,3 +12,9 @@
 <script setup lang="ts">
 import { EventBase, EventModifiers } from './components'
 </script>
+
+<route lang="yaml">
+meta:
+  menuTitle: Event
+  menuOrderNo: 600
+</route>

@@ -1,7 +1,7 @@
 <template>
   <div class="grid-layout-2">
     <div class="col-span-2">
-      <n-card>
+      <n-card title="Root comp">
         <div class="flex justify-evenly w-full">
           <des-table :var-obj="{ count, count2, count3 }">
             provide and inject
@@ -32,6 +32,12 @@
     <UseVueUse />
   </div>
 </template>
+
+<route lang="yaml">
+meta:
+  menuTitle: Cross component share state
+  menuOrderNo: 1600
+</route>
 
 <script lang="ts">
 

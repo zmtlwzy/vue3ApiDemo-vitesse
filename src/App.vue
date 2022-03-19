@@ -4,9 +4,8 @@ import { getNaiveThemeProps, lang_storage } from '~/composables'
 const { locale } = useI18n()
 useHead({
   title: 'Vue3-api-demo',
-  meta: [
-    { name: 'description', content: 'Study vue3 api' },
-  ],
+  meta: [{ name: 'description', content: 'Study vue3 api' }],
+  script: [{ src: 'https://unpkg.com/gsap@3/dist/gsap.min.js' }],
 })
 
 watchEffect(() => {

@@ -15,6 +15,12 @@
   </teleport>
 </template>
 
+<route lang="yaml">
+meta:
+  menuTitle: Teleport
+  menuOrderNo: 800
+</route>
+
 <script lang="ts">
 function* toggleTarget() {
   while (true) {

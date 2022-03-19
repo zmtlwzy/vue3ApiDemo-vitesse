@@ -11,6 +11,12 @@
   </div>
 </template>
 
+<route lang="yaml">
+meta:
+  menuTitle: Transition
+  menuOrderNo: 1200
+</route>
+
 <script lang="ts">
 import type { BaseTransitionProps } from 'vue'
 import { useTransitionState } from 'vue'

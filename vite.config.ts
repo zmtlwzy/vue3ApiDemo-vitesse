@@ -1,6 +1,7 @@
 import path from 'path'
 import { defineConfig } from 'vite'
 import Vue from '@vitejs/plugin-vue'
+import vueJsx from '@vitejs/plugin-vue-jsx'
 import Pages from 'vite-plugin-pages'
 import generateSitemap from 'vite-ssg-sitemap'
 import Layouts from 'vite-plugin-vue-layouts'
@@ -34,6 +35,7 @@ export default defineConfig({
         },
       },
     }),
+    vueJsx(),
 
     // https://github.com/hannoeru/vite-plugin-pages
     Pages({
@@ -41,6 +43,16 @@ export default defineConfig({
       exclude: [
         '**/components/*.vue',
       ],
+      onRoutesGenerated: (routes) => {
+        return routes.map((route) => {
+          if (['all', 'index'].includes(route.name)) return route
+          const getPath = route.name.split('-').join('/')
+          return {
+            ...route,
+            path: `/${getPath}`,
+          }
+        })
+      },
     }),
 
     // https://github.com/JohnCampionJr/vite-plugin-vue-layouts

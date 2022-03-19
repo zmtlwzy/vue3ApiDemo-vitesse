@@ -1,5 +1,8 @@
 <template>
-  <my-foo />
+  <div class="flex flex-col gap-2">
+    <my-foo>Try toggle darkMode</my-foo>
+    <my-foo color="white" bg-color="#adc59d" />
+  </div>
 </template>
 
 <script lang="ts">

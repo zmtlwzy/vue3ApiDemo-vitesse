@@ -29,3 +29,9 @@ export default defineComponent({
   },
 })
 </script>
+
+<route lang="yaml">
+meta:
+  menuTitle: WatchEffect
+  menuOrderNo: 500
+</route>

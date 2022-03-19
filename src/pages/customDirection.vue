@@ -8,6 +8,12 @@
   </n-space>
 </template>
 
+<route lang="yaml">
+meta:
+  menuTitle: CustomDirection
+  menuOrderNo: 1500
+</route>
+
 <script lang="ts">
 import { useAppStore } from '~/stores/app'
 import { pinDirective } from '~/directive/pin'

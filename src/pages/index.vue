@@ -1,4 +1,3 @@
 <route lang="yaml">
-redirect:
-  /refs
+redirect: /refs
 </route>

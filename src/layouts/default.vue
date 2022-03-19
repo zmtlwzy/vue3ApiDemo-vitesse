@@ -28,7 +28,7 @@
       :native-scrollbar="false"
       collapse-mode="width"
       :collapsed-width="0"
-      :width="210"
+      :width="appStore.siderWidth"
       :show-collapsed-content="false"
       show-trigger="bar"
       content-style="padding-right: 10px;"

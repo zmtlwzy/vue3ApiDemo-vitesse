@@ -1,5 +1,4 @@
 <template>
-  <n-h2>Namespaced Component</n-h2>
   <div class="grid-layout-2">
     <Comps.Base />
     <Comps.UseContext ref="comp" msg="demo2" :num="123" @inc="handleClick">
@@ -12,6 +11,12 @@
     </Comps.UseContext>
   </div>
 </template>
+
+<route lang="yaml">
+meta:
+  menuTitle: <script setup>
+  menuOrderNo: 1700
+</route>
 
 <script setup lang="ts">
 import type { Ref } from 'vue'

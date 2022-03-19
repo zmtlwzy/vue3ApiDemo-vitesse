@@ -84,3 +84,9 @@ export default defineComponent({
   },
 })
 </script>
+
+<route lang="yaml">
+meta:
+  menuTitle: Computed
+  menuOrderNo: 300
+</route>

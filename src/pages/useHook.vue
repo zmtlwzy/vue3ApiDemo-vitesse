@@ -8,8 +8,11 @@
   </n-card>
 </template>
 
-<script lang="ts">
-</script>
+<route lang="yaml">
+meta:
+  menuTitle: UseHook
+  menuOrderNo: 900
+</route>
 
 <script setup lang="ts">
 import { useHalfPosition, useMousePosition, useScreenPosition } from '~/composables'
