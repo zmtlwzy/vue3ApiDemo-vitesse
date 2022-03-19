@@ -1,7 +1,7 @@
 <template>
   <n-card>
     <n-space vertical align="center">
-      <n-button @click="show = !show">
+      <n-button id="computed_toggle" @click="show = !show">
         {{ show ? 'hide' : 'show' }}
       </n-button>
       <des-table v-if="show" :var-obj="{ count, com1, com2, com3 }" />
