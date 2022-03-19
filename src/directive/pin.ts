@@ -26,6 +26,5 @@ export const pinDirective: Directive = {
 }
 
 export function setupPinDirective(app: App) {
-  console.log(app, 'app')
   app.directive('pin', pinDirective)
 }
