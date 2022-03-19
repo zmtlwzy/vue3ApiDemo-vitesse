@@ -27,7 +27,6 @@
 </template>
 
 <script lang="ts">
-import type { EffectScope } from 'vue'
 import { effectScope, getCurrentScope, onScopeDispose } from 'vue'
 
 export default defineComponent({
@@ -65,7 +64,6 @@ export default defineComponent({
     currentScope()
 
     const handleScope = (keyName: 'on' | 'off' | 'stop' | 'currentStop' | 'scope2On') => {
-      let curScope: EffectScope | undefined
       if (keyName === 'currentStop') {
         console.log(currentScope()?.stop())
         return
@@ -78,7 +76,7 @@ export default defineComponent({
       }
 
       scope[keyName]()
-      curScope = currentScope()
+      const curScope = currentScope()
       console.log(curScope === scope, curScope === scope2)
     }
 
