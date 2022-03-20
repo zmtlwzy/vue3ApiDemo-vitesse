@@ -12,12 +12,6 @@
   </div>
 </template>
 
-<route lang="yaml">
-meta:
-  menuTitle: <script setup>
-  menuOrderNo: 1700
-</route>
-
 <script setup lang="ts">
 import type { Ref } from 'vue'
 import * as Comps from './components'
@@ -33,3 +27,9 @@ watch(
   },
 )
 </script>
+
+<route lang="yaml">
+meta:
+  menuTitle: <script setup>
+  menuOrderNo: 1700
+</route>

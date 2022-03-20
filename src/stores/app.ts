@@ -5,6 +5,7 @@ import { resetSharedState } from '~/composables'
 export const useAppStore = defineStore('app', () => {
   const { count: refreshId, inc } = useCounter(0)
   const siderWidth = ref(210)
+  const headerHeight = ref(60)
 
   function resetAllState() {
     refreshId.value++
@@ -14,6 +15,7 @@ export const useAppStore = defineStore('app', () => {
 
   return {
     siderWidth,
+    headerHeight,
     refreshId,
     inc,
     resetAllState,

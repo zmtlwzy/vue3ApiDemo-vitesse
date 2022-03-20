@@ -76,8 +76,6 @@ import { useAppStore } from '~/stores/app'
 
 const { t, availableLocales, locale } = useI18n()
 
-// console.log(getNaiveMenuList())
-
 const toggleLocales = () => {
   const locales = availableLocales
   lang_storage.value = locales[(locales.indexOf(lang_storage.value || locale.value) + 1) % locales.length]

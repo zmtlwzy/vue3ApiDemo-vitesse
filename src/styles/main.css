@@ -8,10 +8,6 @@ body,
   padding: 0;
 }
 
-html {
-  --app-header-height: 60px;
-}
-
 html.dark {
   background: #121212;
 }
@@ -21,7 +17,7 @@ html.dark {
 }
 
 #nprogress .bar {
-  background: rgb(13,148,136);
+  background: var(--app-primary-color);
   opacity: 0.75;
   position: fixed;
   z-index: 1031;

@@ -4,10 +4,15 @@ import type { MenuOption } from 'naive-ui'
 import { renderLink } from './render'
 import { routes } from '.'
 import { listToTree, treeMap } from '~/utils/treeHelper'
+
+type Option = MenuOption & {
+  meta?: RouteMeta
+}
+
 export const getNaiveMenuList = (r = routes) => {
   const dr = cloneDeep(r) as RouteRecordRaw[]
   const genRawMenuList = dr.map((item) => {
-    const _item = {} as MenuOption
+    const _item = {} as Option
     const { path } = item
     const realItem = item?.children?.[0]
     const name = realItem?.name as string
@@ -27,7 +32,7 @@ export const getNaiveMenuList = (r = routes) => {
   }).filter((item) => {
     return Reflect.get(item, 'path')
   }).sort((a, b) => {
-    return (a?.meta?.menuOrderNo || 0) - (b?.meta?.menuOrderNo || 0)
+    return (Number(a?.meta?.menuOrderNo || 0)) - (Number(b?.meta?.menuOrderNo || 0))
   })
   return treeMap(listToTree(genRawMenuList), {
     conversion: (item) => {
