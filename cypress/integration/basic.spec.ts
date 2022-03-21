@@ -26,7 +26,7 @@ context('Basic', () => {
   })
 
   it('markdown', () => {
-    cy.visit('http://localhost:3333/base_reactivity/is_proxy')
+    cy.visit('http://localhost:3333/baseReactivity/isProxy')
       .get('pre.language-js')
       .should('exist')
   })

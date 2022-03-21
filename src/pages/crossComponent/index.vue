@@ -1,5 +1,8 @@
 <template>
   <div class="grid-layout-2">
+    <n-h2 class="col-span-2">
+      Cross component share state
+    </n-h2>
     <div class="col-span-2">
       <n-card title="Root comp">
         <div class="flex justify-evenly w-full">
@@ -35,7 +38,7 @@
 
 <route lang="yaml">
 meta:
-  menuTitle: Cross component share state
+  menuTitle: Share state
   menuOrderNo: 1600
 </route>
 
