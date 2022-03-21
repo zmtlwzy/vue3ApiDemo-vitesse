@@ -64,7 +64,7 @@ export default defineComponent({
     function watchFun() {
       state.other = state.count * 2 + count2.value
       const getDom = unrefElement(el)?.firstElementChild?.lastElementChild as HTMLElement
-      const domText = getDom.innerText
+      const domText = getDom?.innerText
       console.log(`domText:${domText}  state.count:${state.count}`)
     }
 

@@ -1,8 +1,9 @@
 import { ViteSSG } from 'vite-ssg'
 import App from './App.vue'
+import Gbasic from '~/components/GlobalBasic.vue'
 import { routes } from '~/router'
 import { registerCustomEl } from '~/webComponents'
-// import { setupGlobDirectives } from '~/directive'
+import { setupGlobDirectives } from '~/directive'
 
 import '@unocss/reset/normalize.css'
 import './styles/main.css'
@@ -16,14 +17,12 @@ export const createApp = ViteSSG(
 
   },
   (ctx) => {
+    const { app } = ctx
+    registerCustomEl()
+    setupGlobDirectives(app)
+    app.component('Gbasic', Gbasic)
+
     // install all modules under `modules/`
     Object.values(import.meta.globEager('./modules/*.ts')).forEach(i => i.install?.(ctx))
   },
 )
-
-async function bootstrap() {
-  // const { app } = await createApp()
-  registerCustomEl()
-}
-
-bootstrap()

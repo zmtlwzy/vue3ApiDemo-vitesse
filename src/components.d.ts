@@ -6,20 +6,7 @@ declare module 'vue' {
   export interface GlobalComponents {
     Counter: typeof import('./components/Counter.vue')['default']
     DesTable: typeof import('./components/DesTable.vue')['default']
-    NA: typeof import('naive-ui')['NA']
-    NBackTop: typeof import('naive-ui')['NBackTop']
-    NButton: typeof import('naive-ui')['NButton']
-    NCard: typeof import('naive-ui')['NCard']
-    NConfigProvider: typeof import('naive-ui')['NConfigProvider']
-    NLayout: typeof import('naive-ui')['NLayout']
-    NLayoutFooter: typeof import('naive-ui')['NLayoutFooter']
-    NLayoutHeader: typeof import('naive-ui')['NLayoutHeader']
-    NLayoutSider: typeof import('naive-ui')['NLayoutSider']
-    NMenu: typeof import('naive-ui')['NMenu']
-    NMessageProvider: typeof import('naive-ui')['NMessageProvider']
-    NResult: typeof import('naive-ui')['NResult']
-    NSpace: typeof import('naive-ui')['NSpace']
-    NTag: typeof import('naive-ui')['NTag']
+    GlobalBasic: typeof import('./components/GlobalBasic.vue')['default']
     Source: typeof import('./components/Source.vue')['default']
   }
 }

@@ -1,5 +1,6 @@
 {
   "compilerOptions": {
+    "jsx": "preserve",
     "baseUrl": ".",
     "module": "ESNext",
     "target": "es2016",
@@ -16,12 +17,12 @@
     "types": [
       "vite/client",
       "vite-plugin-pages/client",
-      "vite-plugin-vue-layouts/client"
+      "vite-plugin-vue-layouts/client",
     ],
     "paths": {
       "#/*": ["./*"],
-      "~/*": ["src/*"]
+      "~/*": ["src/*"],
     }
   },
-  "exclude": ["dist", "node_modules", "cypress"]
+  "exclude": ["dist", "node_modules", "cypress"],
 }

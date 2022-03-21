@@ -1,7 +1,6 @@
 <template>
   <n-space vertical>
     <n-slider v-model:value="pinPadding" :min="min" :max="max" :step="1" />
-    <!-- <input type="range" min="min" :max="max" v-model="pinPadding" /> -->
     <p ref="textEl" v-pin:[direction].a.b="pinPadding">
       v-pin
     </p>
@@ -16,14 +15,12 @@ meta:
 
 <script lang="ts">
 import { useAppStore } from '~/stores/app'
-import { pinDirective } from '~/directive/pin'
 
 export default defineComponent({
   name: 'CustomDirective',
-  directives: { pin: pinDirective },
   setup() {
     const appStore = useAppStore()
-    const pinPadding = ref<number>(210)
+    const pinPadding = ref<number>(appStore.siderWidth)
     const textEl = ref<HTMLElement>()
     const direction = ref<string>('left')
     const max = computed(() => {
