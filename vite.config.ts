@@ -45,11 +45,15 @@ export default defineConfig({
       ],
       onRoutesGenerated: (routes) => {
         return routes.map((route) => {
+          // console.log(route)
           if (['all', 'index'].includes(route.name)) return route
           const getPath = route.name.split('-').join('/')
           return {
             ...route,
             path: `/${getPath}`,
+            ...route.component ? {
+              meta: { ...route.meta, dir: route.component }
+            } : {}
           }
         })
       },

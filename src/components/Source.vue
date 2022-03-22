@@ -19,8 +19,9 @@
 const { currentRoute } = useRouter()
 
 const getUrl = computed(() => {
-  const dir = `${unref(currentRoute).path}.vue`
-  return `https://github.com/zmtlwzy/vue3-api-demo/blob/main/src/pages${dir}`
+  const dir = currentRoute.value?.meta?.dir
+  return dir ?
+   `https://github.com/zmtlwzy/vue3ApiDemo-vitesse/blob/main${dir}` :
+   'javascript:;'
 })
-
 </script>
