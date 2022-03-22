@@ -1,8 +1,8 @@
 <template>
   <div class="grid-layout-2">
-      <EventBase />
-      <EventModifiers />
-      <EventModifiersUseTsx class="col-span-2" />
+    <EventBase />
+    <EventModifiers />
+    <EventModifiersUseTsx class="col-span-2" />
   </div>
 </template>
 

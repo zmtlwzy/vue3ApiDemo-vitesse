@@ -1,2 +1,5 @@
 dist
 public
+src/pages/lifeCycle.vue
+src/pages/asyncComponent
+src/pages/event/components/ModifiersUseTsx.vue

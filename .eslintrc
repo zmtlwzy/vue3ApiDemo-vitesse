@@ -1,9 +1,23 @@
 {
-  "extends": "@antfu",
+  "extends": [
+    "@antfu"
+  ],
   "rules": {
     "no-console": "off",
     "@typescript-eslint/ban-ts-ignore": "off",
-    "react/display-name": "off",
-    "react/no-unknown-property": "off"
+    "vue/html-self-closing": [
+      "off",
+      {
+        "html": {
+          "void": "always",
+          "normal": "never",
+          "component": "always"
+        },
+        "svg": "always",
+        "math": "always"
+      }
+    ]
+    // "react/display-name": "off",
+    // "react/no-unknown-property": "off"
   }
 }
