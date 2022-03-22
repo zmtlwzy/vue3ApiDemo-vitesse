@@ -1,4 +1,5 @@
 import { NAlert, NSpin } from 'naive-ui'
+import type { Fn } from '~/types'
 
 interface Options {
   size?: 'small' | 'medium' | 'large' | number

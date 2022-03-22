@@ -28,7 +28,7 @@ export default defineConfig({
   plugins: [
     Vue({
       include: [/\.vue$/, /\.md$/],
-      reactivityTransform: 'src/pages/script_setup/**/*.vue',
+      reactivityTransform: 'src/pages/scriptSetup/**/*.vue',
       template: {
         compilerOptions: {
           isCustomElement: tag => tag.startsWith('my-'),

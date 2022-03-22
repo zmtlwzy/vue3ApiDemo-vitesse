@@ -1,6 +1,8 @@
 <script lang="tsx">
+import type { DefineComponent } from 'vue'
 import Gbasic from '~/components/GlobalBasic.vue'
-export default defineAsyncComponent<any>(
+
+export default defineAsyncComponent<DefineComponent<{}, {}, any>>(
   () =>
     new Promise((resolve) => {
       setTimeout(resolve, 4000, defineComponent({

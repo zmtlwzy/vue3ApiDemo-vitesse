@@ -1,16 +1,13 @@
 <template>
-  <n-grid :cols="2" x-gap="16" y-gap="24">
-    <n-grid-item>
+  <div class="grid-layout-2">
       <EventBase />
-    </n-grid-item>
-    <n-grid-item>
       <EventModifiers />
-    </n-grid-item>
-  </n-grid>
+      <EventModifiersUseTsx class="col-span-2" />
+  </div>
 </template>
 
 <script setup lang="ts">
-import { EventBase, EventModifiers } from './components'
+import { EventBase, EventModifiers, EventModifiersUseTsx } from './components'
 </script>
 
 <route lang="yaml">
