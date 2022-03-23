@@ -20,8 +20,8 @@ const { currentRoute } = useRouter()
 
 const getUrl = computed(() => {
   const dir = currentRoute.value?.meta?.dir
-  return dir ?
-   `https://github.com/zmtlwzy/vue3ApiDemo-vitesse/blob/main${dir}` :
-   'javascript:;'
+  return dir
+    ? `https://github.com/zmtlwzy/vue3ApiDemo-vitesse/blob/main${dir}`
+    : 'javascript:;'
 })
 </script>

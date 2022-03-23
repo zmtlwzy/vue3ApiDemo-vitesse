@@ -51,9 +51,11 @@ export default defineConfig({
           return {
             ...route,
             path: `/${getPath}`,
-            ...route.component ? {
-              meta: { ...route.meta, dir: route.component }
-            } : {}
+            ...route.component
+              ? {
+                meta: { ...route.meta, dir: route.component },
+              }
+              : {},
           }
         })
       },
