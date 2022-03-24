@@ -16,6 +16,8 @@ context('Basic', () => {
       .url()
       .should('eq', 'http://localhost:3333/computed')
 
+    cy.wait(1000)
+
     cy.contains('show')
       .should('exist')
 
