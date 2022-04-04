@@ -1,6 +1,6 @@
 <route lang="yaml">
 redirect: /newFeatures/vBind
 meta:
-  menuTitle: New features in v3.2
+  menuTitle: New features
   isWrapper: true
 </route>

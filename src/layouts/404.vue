@@ -4,10 +4,10 @@ const { t } = useI18n()
 </script>
 
 <template>
-  <main flex-C h-screen>
+  <main flex-jc-ac h-screen>
     <n-result status="404" :title="t('not-found')">
       <router-view />
-      <div flex-C>
+      <div flex-jc-ac>
         <n-button ghost @click="router.back()">
           {{ t('button.back') }}
         </n-button>

@@ -1,6 +1,6 @@
 <script lang="tsx">
 import { A, B } from './components'
-import { createAsyncComponent } from './components/createAsyncComponents'
+import { createAsyncComponent } from '~/composables/createAsyncComponents'
 
 export default defineComponent({
   setup() {

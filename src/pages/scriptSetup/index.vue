@@ -1,17 +1,3 @@
-<template>
-  <div class="grid-layout-2">
-    <Comps.Base />
-    <Comps.UseContext ref="comp" msg="demo2" :num="123" @inc="handleClick">
-      <template #default>
-        slot_default
-      </template>
-      <template #other>
-        slot_other
-      </template>
-    </Comps.UseContext>
-  </div>
-</template>
-
 <script setup lang="ts">
 import type { Ref } from 'vue'
 import * as Comps from './components'
@@ -28,8 +14,22 @@ watch(
 )
 </script>
 
+<template>
+  <div class="grid-layout-2">
+    <Comps.Base />
+    <Comps.UseContext ref="comp" msg="demo2" :num="123" @inc="handleClick">
+      <template #default>
+        slot_default
+      </template>
+      <template #other>
+        slot_other
+      </template>
+    </Comps.UseContext>
+  </div>
+</template>
+
 <route lang="yaml">
 meta:
-  menuTitle: <script setup>
+  menuTitle: Syntactic sugar
   menuOrderNo: 1700
 </route>
