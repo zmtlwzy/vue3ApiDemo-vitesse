@@ -16,7 +16,9 @@
         "svg": "always",
         "math": "always"
       }
-    ]
+    ],
+    "vue/component-tags-order": "off",
+    "react/display-name": "off"
     // "react/display-name": "off",
     // "react/no-unknown-property": "off"
   }

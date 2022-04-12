@@ -46,7 +46,8 @@ export default defineConfig({
       onRoutesGenerated: (routes) => {
         return routes.map((route) => {
           // console.log(route)
-          if (['all', 'index'].includes(route.name)) return route
+          if (['all', 'index'].includes(route.name))
+            return route
           const getPath = route.name.split('-').join('/')
           return {
             ...route,
@@ -75,6 +76,7 @@ export default defineConfig({
         {
           'vue': ['isProxy', 'isReactive'],
           'vue/macros': ['$$', '$ref', '$computed', '$shallowRef'],
+          '/src/composables': ['getComponentName'],
         },
       ],
       dts: 'src/auto-imports.d.ts',
@@ -85,7 +87,7 @@ export default defineConfig({
       // allow auto load markdown components under `./src/components/`
       extensions: ['vue', 'md'],
       // allow auto import and register components used in markdown
-      include: [/\.vue$/, /\.vue\?vue/, /\.md$/],
+      include: [/\.vue$/, /\.vue\?vue/, /\.md$/, /\.(j|t)sx$/],
       dts: 'src/components.d.ts',
       resolvers: [
         NaiveUiResolver(),

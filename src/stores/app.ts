@@ -1,9 +1,11 @@
 import { acceptHMRUpdate, defineStore } from 'pinia'
 import { useDemoStore } from './demo'
 import { resetSharedState } from '~/composables'
+import { useSharedCounter } from '~/pages/crossComponent/components/UseVueUse.vue'
 
 export const useAppStore = defineStore('app', () => {
   const { count: refreshId, inc } = useCounter(0)
+  const { reset: resetVueuseDemo } = useSharedCounter()
   const siderWidth = ref(210)
   const headerHeight = ref(60)
 
@@ -11,6 +13,7 @@ export const useAppStore = defineStore('app', () => {
     refreshId.value++
     useDemoStore().$reset()
     resetSharedState()
+    resetVueuseDemo()
   }
 
   return {

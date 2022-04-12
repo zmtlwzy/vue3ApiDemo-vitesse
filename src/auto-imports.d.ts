@@ -30,6 +30,7 @@ declare global {
   const effectScope: typeof import('vue')['effectScope']
   const EffectScope: typeof import('vue')['EffectScope']
   const extendRef: typeof import('@vueuse/core')['extendRef']
+  const getComponentName: typeof import('/src/composables')['getComponentName']
   const getCurrentInstance: typeof import('vue')['getCurrentInstance']
   const getCurrentScope: typeof import('vue')['getCurrentScope']
   const h: typeof import('vue')['h']

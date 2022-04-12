@@ -2,7 +2,7 @@
 // We suggest you to commit this file into source control
 // Read more: https://github.com/vuejs/vue-next/pull/3399
 
-declare module 'vue' {
+declare module '@vue/runtime-core' {
   export interface GlobalComponents {
     Counter: typeof import('./components/Counter.vue')['default']
     DesTable: typeof import('./components/DesTable.vue')['default']
@@ -11,22 +11,17 @@ declare module 'vue' {
     NBackTop: typeof import('naive-ui')['NBackTop']
     NButton: typeof import('naive-ui')['NButton']
     NCard: typeof import('naive-ui')['NCard']
-    NCheckbox: typeof import('naive-ui')['NCheckbox']
     NConfigProvider: typeof import('naive-ui')['NConfigProvider']
-    NH2: typeof import('naive-ui')['NH2']
     NLayout: typeof import('naive-ui')['NLayout']
     NLayoutFooter: typeof import('naive-ui')['NLayoutFooter']
     NLayoutHeader: typeof import('naive-ui')['NLayoutHeader']
     NLayoutSider: typeof import('naive-ui')['NLayoutSider']
-    NList: typeof import('naive-ui')['NList']
-    NListItem: typeof import('naive-ui')['NListItem']
     NMenu: typeof import('naive-ui')['NMenu']
     NMessageProvider: typeof import('naive-ui')['NMessageProvider']
-    NRadio: typeof import('naive-ui')['NRadio']
     NSpace: typeof import('naive-ui')['NSpace']
-    NSpin: typeof import('naive-ui')['NSpin']
-    NTag: typeof import('naive-ui')['NTag']
     NText: typeof import('naive-ui')['NText']
+    RouterLink: typeof import('vue-router')['RouterLink']
+    RouterView: typeof import('vue-router')['RouterView']
     Source: typeof import('./components/Source.vue')['default']
   }
 }
