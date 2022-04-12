@@ -96,6 +96,6 @@ const getStyle = ref<CSSProperties>({
 const menuValue = computed(() => route.name)
 
 const handleRefresh = () => {
-  appStore.inc()
+  appStore.resetAllState()
 }
 </script>
