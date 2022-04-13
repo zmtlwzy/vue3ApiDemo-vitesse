@@ -2,11 +2,11 @@
   <n-card title="TopLevelAwait">
     <n-space vertical align="center">
       <Suspense>
-          <Top />
-          <template #fallback>
-            loading...
-          </template>
-        </Suspense>
+        <Top />
+        <template #fallback>
+          loading...
+        </template>
+      </Suspense>
     </n-space>
   </n-card>
 </template>
