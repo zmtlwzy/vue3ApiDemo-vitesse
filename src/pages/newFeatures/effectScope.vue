@@ -27,14 +27,16 @@
 </template>
 
 <script lang="ts">
+import { promiseTimeout } from '@vueuse/core'
 import { effectScope, getCurrentScope, onScopeDispose } from 'vue'
 
 export default defineComponent({
   name: 'EffectScope',
   setup() {
     const counter = ref(1)
-    const scope = effectScope()
-    const scope2 = effectScope()
+    const scope = effectScope() as any
+    const scope2 = effectScope() as any
+    const detachedScope = effectScope(true)
 
     console.log(scope, 'scope')
     console.log(scope2, 'scope2')
@@ -52,6 +54,18 @@ export default defineComponent({
       return {
         doubled,
       }
+    })
+
+    detachedScope.run(() => {
+      onScopeDispose(() => {
+        console.log('detachedScope cleaned!')
+      })
+    })
+
+    onUnmounted(async() => {
+      console.log('unmounted')
+      await promiseTimeout(2000)
+      detachedScope.stop()
     })
 
     scope2.cleanups.push(() => {

@@ -1,6 +1,7 @@
 {
   "compilerOptions": {
     "jsx": "preserve",
+    "allowJs": true,
     "baseUrl": ".",
     "module": "ESNext",
     "target": "es2016",

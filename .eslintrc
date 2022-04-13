@@ -20,7 +20,6 @@
     "vue/component-tags-order": "off",
     "vue/one-component-per-file": "off",
     "react/display-name": "off"
-    // "react/display-name": "off",
     // "react/no-unknown-property": "off"
   }
 }
