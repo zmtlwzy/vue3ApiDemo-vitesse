@@ -30,6 +30,6 @@ watch(
 
 <route lang="yaml">
 meta:
-  menuTitle: Syntactic sugar
+  menuTitle: Reactivity Transform
   menuOrderNo: 1700
 </route>

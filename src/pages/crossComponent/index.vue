@@ -38,7 +38,7 @@
 
 <route lang="yaml">
 meta:
-  menuTitle: Share state
+  menuTitle: Share State
   menuOrderNo: 1600
 </route>
 

@@ -49,12 +49,12 @@ jobs:
       - name: Unit Test
         run: pnpm run test:unit
 
-      - name: Cypress PNPM Patch
-        run: cp pnpm-lock.yaml package-lock.json
+      # - name: Cypress PNPM Patch
+      #   run: cp pnpm-lock.yaml package-lock.json
 
-      - name: Cypress
-        uses: cypress-io/github-action@v2
-        with:
-          install-command: echo
-          build: pnpm run build
-          start: npx vite --port 3333
+      # - name: Cypress
+      #   uses: cypress-io/github-action@v2
+      #   with:
+      #     install-command: echo
+      #     build: pnpm run build
+      #     start: npx vite --port 3333
