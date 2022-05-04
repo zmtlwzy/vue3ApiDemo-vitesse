@@ -8,12 +8,12 @@
 import type { CSSProperties } from 'vue'
 import { isDark } from '~/composables/dark'
 
-const getClass = computed(() => (isDark.value ? 'dark' : null))
 const props = defineProps<{
   color?: string
   bgColor?: string
 }>()
 
+const getClass = computed(() => (isDark.value ? 'dark' : null))
 const getStyle = computed(() => {
   const { color, bgColor } = props
   const cssProp = {} as CSSProperties

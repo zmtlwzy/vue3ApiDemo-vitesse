@@ -1,7 +1,7 @@
 <template>
   <n-card :title="$options.name">
     <n-space vertical>
-      <div :class="[...Object.values(module), fatherModule['module-bold'], 'module-bg']">
+      <div class="module-bg" :class="[...Object.values(module), fatherModule['module-bold']]">
         moduleClass
       </div>
     </n-space>

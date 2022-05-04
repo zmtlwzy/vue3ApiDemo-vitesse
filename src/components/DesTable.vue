@@ -12,13 +12,12 @@
 </template>
 
 <script setup lang="ts">
-function getVarNameStr(v: Record<string, any>) {
-  return Object.entries(v)
-}
-
 const props = defineProps<{
   varObj: Record<string, any>
 }>()
+function getVarNameStr(v: Record<string, any>) {
+  return Object.entries(v)
+}
 
 const arr = computed(() => {
   return getVarNameStr(props.varObj)

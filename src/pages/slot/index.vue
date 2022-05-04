@@ -11,8 +11,8 @@ import DesTable from '#/src/components/DesTable.vue'
       <pre>{{ slotProps }}</pre>
     </SlotBase>
     <FunDemo>
-      <template #foo="{x, y}">
-        <DesTable :var-obj="{x, y}" />
+      <template #foo="{ x, y }">
+        <DesTable :var-obj="{ x, y }" />
       </template>
     </FunDemo>
     <TsxDemo />

@@ -43,7 +43,6 @@ meta:
 </route>
 
 <script lang="ts">
-
 import { PAndI, UseReactive, UseVueUse, UseVuex } from './components'
 import { CountSymbol_2 } from './components/sharedKey'
 import { useSharedCounter } from './components/UseVueUse.vue'

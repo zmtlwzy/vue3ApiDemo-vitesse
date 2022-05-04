@@ -14,15 +14,13 @@
 </template>
 
 <script setup lang="ts">
-const slots = useSlots()
-const attrs = useAttrs()
 const props = withDefaults(defineProps<{ num?: number; msg?: string }>(), {
   num: 11,
   msg: 'some text',
 })
-
 const emit = defineEmits(['inc'])
-
+const slots = useSlots()
+const attrs = useAttrs()
 let count = $ref(1)
 const count2 = ref(count + 1)
 

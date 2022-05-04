@@ -19,5 +19,4 @@ const value = ref('attr_value')
 onMounted(() => {
   console.log(el.value)
 })
-
 </script>

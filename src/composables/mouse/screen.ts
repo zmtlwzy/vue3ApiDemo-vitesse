@@ -1,4 +1,4 @@
-export default function() {
+export default function () {
   const screenX = ref(0)
   const screenY = ref(0)
 

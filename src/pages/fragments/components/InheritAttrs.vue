@@ -11,7 +11,6 @@
 </template>
 
 <script lang="ts">
-
 export default defineComponent({
   name: 'InheritAttrs',
   inheritAttrs: false,

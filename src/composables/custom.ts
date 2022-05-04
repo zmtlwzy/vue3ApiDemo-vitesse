@@ -1,6 +1,6 @@
 import { computed, reactive, toRefs } from 'vue'
 
-export const common = function() {
+export const common = function () {
   const state = reactive({
     count: 0,
     count2: 10,

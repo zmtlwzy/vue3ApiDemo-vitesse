@@ -62,7 +62,7 @@ export default defineComponent({
       })
     })
 
-    onUnmounted(async() => {
+    onUnmounted(async () => {
       console.log('unmounted')
       await promiseTimeout(2000)
       detachedScope.stop()
