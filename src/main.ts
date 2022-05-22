@@ -17,8 +17,8 @@ export const createApp = ViteSSG(
 
   },
   (ctx) => {
-    const { app } = ctx
-    registerCustomEl()
+    const { app, isClient } = ctx
+    isClient && registerCustomEl()
     setupGlobDirectives(app)
     app.component('Gbasic', Gbasic)
 

@@ -5,12 +5,7 @@
 
 [build]
   publish = "dist"
-  command = "npx pnpm i --store=node_modules/.pnpm-store && npx pnpm run build"
-
-[[redirects]]
-  from = "/*"
-  to = "/index.html"
-  status = 200
+  command = "npx pnpm i --store=node_modules/.pnpm-store && npx pnpm run build:ssg"
 
 [[headers]]
   for = "/manifest.webmanifest"

@@ -8,6 +8,7 @@ import Layouts from 'vite-plugin-vue-layouts'
 import Components from 'unplugin-vue-components/vite'
 import { NaiveUiResolver } from 'unplugin-vue-components/resolvers'
 import AutoImport from 'unplugin-auto-import/vite'
+import defineOptions from 'unplugin-vue-define-options/vite'
 import Markdown from 'vite-plugin-md'
 import { VitePWA } from 'vite-plugin-pwa'
 import VueI18n from '@intlify/vite-plugin-vue-i18n'
@@ -28,7 +29,7 @@ export default defineConfig({
   plugins: [
     Vue({
       include: [/\.vue$/, /\.md$/],
-      reactivityTransform: 'src/pages/scriptSetup/**/*.vue',
+      reactivityTransform: true,
       template: {
         compilerOptions: {
           isCustomElement: tag => tag.startsWith('my-'),
@@ -44,7 +45,9 @@ export default defineConfig({
         '**/components/*.vue',
       ],
       onRoutesGenerated: (routes) => {
-        return routes.map((route) => {
+        return routes.filter((route) => {
+          return !route?.meta?.onlyClient
+        }).map((route) => {
           // console.log(route)
           if (['all', 'index'].includes(route.name))
             return route
@@ -76,11 +79,13 @@ export default defineConfig({
         {
           'vue': ['isProxy', 'isReactive'],
           'vue/macros': ['$$', '$ref', '$computed', '$shallowRef'],
-          '/src/composables': ['getComponentName'],
         },
       ],
       dts: 'src/auto-imports.d.ts',
     }),
+
+    // https://github.com/sxzz/unplugin-vue-define-options
+    defineOptions(),
 
     // https://github.com/antfu/unplugin-vue-components
     Components({
@@ -156,6 +161,11 @@ export default defineConfig({
     // Visit http://localhost:3333/__inspect/ to see the inspector
     Inspect(),
   ],
+
+  // @ts-expect-error: Missing ssr key
+  ssr: {
+    noExternal: ['naive-ui', '@juggle/resize-observer', '@css-render/vue3-ssr'],
+  },
 
   // https://github.com/antfu/vite-ssg
   ssgOptions: {

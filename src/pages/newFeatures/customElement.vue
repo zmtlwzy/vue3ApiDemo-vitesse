@@ -5,6 +5,11 @@
   </div>
 </template>
 
+<route lang="yaml">
+meta:
+  onlyClient: true
+</route>
+
 <script lang="ts">
 import Foo from '~/webComponents/foo.ce.vue'
 
