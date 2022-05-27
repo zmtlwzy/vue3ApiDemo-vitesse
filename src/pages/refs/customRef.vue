@@ -3,7 +3,6 @@
     <n-space vertical>
       <n-input
         v-model:value="refValue"
-        type="input"
         placeholder="停止输入500ms后,输入值将在下方更新"
         class="max-w-1/2"
       />
